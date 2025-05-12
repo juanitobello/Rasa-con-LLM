@@ -1,0 +1,68 @@
+version: "3.1"
+
+stories:
+
+- story: story_verificar_alertas_de_emergencia
+  steps:
+  - intent: int_saludo_verifiacion_de_alertas
+  - action: action_check_alert_and_chatgpt
+
+
+- story: reportar_emergencia
+  steps:
+  - intent: reportar_emergencia
+  - action: action_report_emergency
+  - intent: direccion_details_to_shelter
+  - action: 
+
+- story: story_user_are_in_emergency
+  steps:
+  - intent: int_i_am_in_emergency
+    entities:
+      - emergency_state: "True"
+  - action: action_choose_emergency_type
+
+  - intent: int_notify_hurricane_or_thunderstorm
+    entities:
+      - tipo_emergencia: "hurricane"
+  - action: utter_ask_where_are_you
+  - intent: int_user_notify_location
+  - action: action_call_gemini_for_emergency
+  - action: action_check_safety_status
+  - intent: int_user_is_safe
+    entities:
+      - safe_status: True
+
+  - intent: int_notify_forest_fire
+    entities:
+      - tipo_emergencia: "forest fire"
+  - action: utter_ask_where_are_you
+  - intent: int_user_notify_location
+  - action: action_call_gemini_for_emergency
+  - action: action_check_safety_status
+  - intent: int_user_is_safe
+    entities:
+      - safe_status: True
+
+  - intent: int_notify_earthquake
+    entities:
+      - tipo_emergencia: "earthquake"
+  - action: utter_ask_where_are_you
+  - intent: int_user_notify_location
+  - action: action_call_gemini_for_emergency
+  - action: action_check_safety_status
+  - intent: int_user_is_safe
+    entities:
+      - safe_status: True
+
+  - intent: int_notify_flood_or_tsunami
+    entities:
+      - tipo_emergencia: "flood or Tsunami"
+  - action: utter_ask_where_are_you
+  - intent: int_user_notify_location
+  - action: action_call_gemini_for_emergency
+  - action: action_check_safety_status
+  - intent: int_user_is_safe
+    entities:
+      - safe_status: True
+

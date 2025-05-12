@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-tipo_emergencia",
+      "2": "I-tipo_emergencia",
+      "3": "L-tipo_emergencia",
+      "4": "U-tipo_emergencia",
+      "5": "B-ubicacion",
+      "6": "I-ubicacion",
+      "7": "L-ubicacion",
+      "8": "U-ubicacion",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-tipo_emergencia": 1,
+      "I-tipo_emergencia": 2,
+      "L-tipo_emergencia": 3,
+      "U-tipo_emergencia": 4,
+      "B-ubicacion": 5,
+      "I-ubicacion": 6,
+      "L-ubicacion": 7,
+      "U-ubicacion": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

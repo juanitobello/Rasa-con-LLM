@@ -1,0 +1,219 @@
+version: "3.1"
+
+nlu:
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+##### Inicio de intenciones
+
+- intent: int_saludo_verifiacion_de_alertas
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+
+- intent: direccion_details_to_shelter
+  examples: |
+    - Give me the instructions 
+    - Get details instructions
+    - What is the best route to the nearest shelter?
+    - How can I get to a safe place right now?
+    - Can you give me directions to the closest emergency shelter?
+    - Show me how to get to the nearest evacuation center
+    - I need directions to a shelter
+    - How do I reach a shelter from here?
+    - Which way should I go to find a shelter?
+    - What's the fastest way to get to safety?
+    - Help me find the closest place to evacuate
+    - Tell me how to evacuate from my current location
+
+##------------- Ask to user if he ir an Emergency GEMENI--------------------
+
+- intent: int_i_am_in_emergency
+  examples: |
+    - [I am in an emergency](emergency_state)
+    - Help! It's an emergency
+    - I need immediate help
+    - Please assist, it's urgent
+    - I am in danger
+    - Emergency! Please respond
+    - Something bad happened, I need help
+    - This is an emergency situation
+    - Please hurry, I am in trouble
+    - Urgent! I need assistances
+    - I am stuck in a critical situation
+    - Help me, I am in an emergency
+    - There's an emergency, I need help
+    - Can someone help me right now? It's urgent
+    - This is a critical emergency
+    - Please help, it's a life-threatening situation
+    - I am in serious trouble, need help
+    - I need emergency assistance
+
+
+- intent: int_notify_no_emergency
+  examples: |
+    - I am [not in an emergency](emergency_state)
+    - Everything is fine here
+    - No, I am safe
+    - There is no emergency right now
+    - I don't need urgent help
+    - No, I am not in danger
+    - The situation is normal here
+    - No emergency on my end
+    - I'm okay, nothing urgent
+    - Everything is under control
+    - No need for assistance, I'm fine
+    - I just wanted to check, but there's no emergency
+    - No danger where I am
+    - I am safe, no issues here
+    - It's all calm and normal here
+
+
+
+##--------------- User notify kind of emergency----------------------------
+
+- intent: int_notify_hurricane_or_thunderstorm
+  examples: |
+    - I am experiencing a hurricane right now
+    - There's a thunderstorm happening here
+    - The hurricane is causing damage in my area
+    - We're in the middle of a tropical storm
+    - A thunderstorm just started here
+    - The wind and rain from the hurricane are severe
+    - A storm is hitting my location
+    - The thunderstorm is getting worse where I am
+    - A hurricane is affecting my area
+    - There's a severe thunderstorm outside
+
+- intent: int_notify_forest_fire
+  examples: |
+    - There's a forest fire near my house
+    - I see smoke and flames from a wildfire
+    - The fire is spreading quickly here
+    - We're surrounded by wildfire smoke
+    - A forest fire is threatening my location
+    - The wildfire is close to my area
+    - I am evacuating because of a forest fire
+    - There's a wildfire affecting my neighborhood
+    - I can see the forest fire from my house
+    - The wildfire is very close to us
+
+- intent: int_notify_earthquake
+  examples: |
+    - We just had an earthquake
+    - I felt an earthquake right now
+    - The ground is shaking here
+    - There's an earthquake happening in my area
+    - The earthquake caused damage near me
+    - I'm experiencing an earthquake at the moment
+    - Everything is shaking due to an earthquake
+    - A strong earthquake just occurred here
+    - We felt a tremor just now
+    - There's seismic activity happening near me
+
+- intent: int_notify_flood_or_tsunami
+  examples: |
+    - My house is flooding right now
+    - There's water rising rapidly in my area
+    - The floodwaters are entering our home
+    - We're being evacuated because of flooding
+    - A tsunami just hit my location
+    - The flood is causing severe damage here
+    - I am stuck in a flood
+    - The tsunami is affecting our town
+    - There's heavy flooding where I am
+    - We're experiencing a tsunami warning in real-time
+
+
+
+
+- intent: int_user_notify_location
+  examples: |
+    - I am in my house
+    - I am inside a building
+    - I am at the school
+    - I am at home
+    - I am at the office
+    - I am at a hospital
+    - I am in a shelter
+    - I am at the park
+    - I am inside a mall
+    - I am on the street
+    - I am at my friend's house
+    - I am in the car
+    - I am at the station
+    - I am in my apartment
+    - I am in the basement
+    - I am in the attic
+    - I am at the university
+    - I am at the gym
+    - I am at the store
+    - I am in the mountains
+    - I am near the river
+    - I am at the bus stop
+    - I am on the highway
+    - I am in the subway station
+    - I am at the beach
+    - I am at a restaurant
+    - I am at a coffee shop
+
+
+
+
+- intent: int_user_is_safe
+  examples: |
+    - I'm safe now
+    - I'm out of danger
+    - Everything is fine
+    - I'm safe
+    - I am ok
+
+#------------------------------ pregunta general LLama3----------------------
+
+- intent: general_question
+  examples: |
+    - How can I create an evacuation plan?
+    - I want to know how to build an emergency kit
+    - What are the steps to make a savings plan?
+    - What should I include in a first aid kit?
+    - How do I prepare my family for a natural disaster?
+    - I’d like to know how to organize an emergency backpack
+    - Can you explain how to create an emergency fund?
+    - What advice do you have for saving money in a critical situation?
+    - How do I make an evacuation plan for my house?
+    - How many liters of water should I store per person?
+    - What kind of food should I stock for an emergency?
+    - How do I prepare a family contingency plan?
+    - What documents should I have ready in case of an evacuation?
+    - How can I organize an evacuation drill with my family?
+    - Can I include my pets in an emergency plan?
+

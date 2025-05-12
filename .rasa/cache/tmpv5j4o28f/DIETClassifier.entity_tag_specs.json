@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-emergency_state",
+      "2": "I-emergency_state",
+      "3": "L-emergency_state",
+      "4": "U-emergency_state",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-emergency_state": 1,
+      "I-emergency_state": 2,
+      "L-emergency_state": 3,
+      "U-emergency_state": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

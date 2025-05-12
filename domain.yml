@@ -1,0 +1,97 @@
+version: "3.1"
+
+intents:
+  - goodbye
+  - bot_challenge
+  - int_saludo_verifiacion_de_alertas
+  - int_i_am_in_emergency
+  - int_notify_no_emergency
+  - int_notify_hurricane_or_thunderstorm
+  - int_notify_forest_fire
+  - int_notify_earthquake
+  - int_notify_flood_or_tsunami
+  - reportar_emergencia #revisar luego
+  - int_user_notify_location
+  - int_user_is_safe
+
+
+actions:
+  - action_hello_world
+  - action_check_alert_and_chatgpt
+  - action_question_to_user_in_emergency
+  - action_report_emergency #Revisar luego
+  - action_choose_emergency_type
+  - action_call_gemini_for_emergency
+  - action_check_safety_status
+
+entities:
+  - tipo_emergencia
+  - ubicacion
+  - emergency_state
+  - safe_status
+
+slots:
+  safe_status:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings:
+      - type: from_text
+
+
+  tipo_emergencia:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: tipo_emergencia
+  ubicacion:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ubicacion
+  emergency_state:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: emergency_state
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/6JeirE5.jpeg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Juan Francisco Bustamante."
+
+  utter_no_emergency_detect:
+  - text: "Hello, no emergency alerts were detected near you at this time. Stay safe and have a great day!"
+  - text: "Good news! There are no emergencies reported near your location. It's always a good time to review your emergency plan, just in case!"
+  - text: "Currently, there are no emergency alerts in your area. We'll notify you immediately if anything changes."
+  - text: "Hi there! You're all clear—no emergencies have been reported nearby. Enjoy your day!"
+  - text: "No emergency alerts are active near your location. Remember to stay informed and keep your emergency kit ready."
+  - text: "Great news! Your area is free of emergency alerts." 
+    image: "https://media.istockphoto.com/id/479607780/es/foto/buenas-noticias-concepto-de-metal-tipo-de-tipograf%C3%ADa.jpg?s=612x612&w=0&k=20&c=slmRuVF5VpNFfDbY0bCcvM4mh8KSFfCw-G744TAkYzI="
+  - text: "No active alerts nearby. If you’d like, I can provide safety tips or help you prepare for potential future emergencies."
+
+
+  utter_ask_where_are_you:
+  - text: "Where are you?"
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,20 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Repeat until user is safe
+  condition:
+    - slot_was_set:
+      - safe_status: False
+  steps:
+  - action: action_check_safety_status

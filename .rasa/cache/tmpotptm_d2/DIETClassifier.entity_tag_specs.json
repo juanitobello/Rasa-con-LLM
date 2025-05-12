@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-emergency_state",
+      "2": "I-emergency_state",
+      "3": "L-emergency_state",
+      "4": "U-emergency_state",
+      "5": "B-tipo_emergencia",
+      "6": "I-tipo_emergencia",
+      "7": "L-tipo_emergencia",
+      "8": "U-tipo_emergencia",
+      "9": "B-ubicacion",
+      "10": "I-ubicacion",
+      "11": "L-ubicacion",
+      "12": "U-ubicacion",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-emergency_state": 1,
+      "I-emergency_state": 2,
+      "L-emergency_state": 3,
+      "U-emergency_state": 4,
+      "B-tipo_emergencia": 5,
+      "I-tipo_emergencia": 6,
+      "L-tipo_emergencia": 7,
+      "U-tipo_emergencia": 8,
+      "B-ubicacion": 9,
+      "I-ubicacion": 10,
+      "L-ubicacion": 11,
+      "U-ubicacion": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]
