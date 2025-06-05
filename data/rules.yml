@@ -12,9 +12,9 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Repeat until user is safe
-  condition:
-    - slot_was_set:
-      - safe_status: False
-  steps:
-  - action: action_check_safety_status
+# - rule: Repeat until user is safe
+#   condition:
+#     - slot_was_set:
+#       - safe_status: False
+#   steps:
+#   - action: action_check_safety_status

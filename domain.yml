@@ -13,6 +13,11 @@ intents:
   - reportar_emergencia #revisar luego
   - int_user_notify_location
   - int_user_is_safe
+  - int_make_route
+  - int_deny
+  - int_direccion_details_to_shelter
+  - int_general_question
+
 
 
 actions:
@@ -23,6 +28,8 @@ actions:
   - action_choose_emergency_type
   - action_call_gemini_for_emergency
   - action_check_safety_status
+  - action_button_make_route
+  - action_make_route_instructions
 
 entities:
   - tipo_emergencia
@@ -30,30 +37,30 @@ entities:
   - emergency_state
   - safe_status
 
-slots:
-  safe_status:
-    type: bool
-    initial_value: false
-    influence_conversation: true
-    mappings:
-      - type: from_text
+# slots:
+#   safe_status:
+#     type: bool
+#     initial_value: false
+#     influence_conversation: true
+#     mappings:
+#       - type: from_text
 
 
-  tipo_emergencia:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: tipo_emergencia
-  ubicacion:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: ubicacion
-  emergency_state:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: emergency_state
+#   tipo_emergencia:
+#     type: text
+#     mappings:
+#       - type: from_entity
+#         entity: tipo_emergencia
+#   ubicacion:
+#     type: text
+#     mappings:
+#       - type: from_entity
+#         entity: ubicacion
+#   emergency_state:
+#     type: text
+#     mappings:
+#       - type: from_entity
+#         entity: emergency_state
 
 
 responses:
@@ -86,11 +93,36 @@ responses:
     image: "https://media.istockphoto.com/id/479607780/es/foto/buenas-noticias-concepto-de-metal-tipo-de-tipograf%C3%ADa.jpg?s=612x612&w=0&k=20&c=slmRuVF5VpNFfDbY0bCcvM4mh8KSFfCw-G744TAkYzI="
   - text: "No active alerts nearby. If you’d like, I can provide safety tips or help you prepare for potential future emergencies."
 
+  utter_nooa_unavailable:
+  - text: "Sorry, the NOOA Server is not available right now. Please try again later."
+  - text: "The NOOA Server is currently unreachable. We are working to resolve the issue."
+  - text: "Apologies, but we cannot connect to the NOOA Server at this moment."
+  - text: "The NOOA Server is experiencing technical difficulties. Please try again soon."
+  - text: "The NOOA Server is temporarily offline. Thank you for your patience."
+  - text: "Unable to access the NOOA Server at this time. Please check back later."
+  - text: "The NOOA Server is down for maintenance. We appreciate your understanding."
+  - text: "There is a problem connecting to the NOOA Server. Please try again in a few minutes."
+  - text: "The NOOA Server is not responding. Our team is investigating the issue."
+  - text: "Unfortunately, the NOOA Server is unavailable. We apologize for the inconvenience."
+
 
   utter_ask_where_are_you:
   - text: "Where are you?"
 
+  utter_let_know_you_save:
+  - text: "Ok, let me know when you are saving."
 
+  utter_show_route:
+    - text: "Here's the route on the map."
+    - text: "I've displayed the route for you on the map."
+    - text: "Take a look at the map—I've highlighted your route."
+    - text: "I've shown the route you need to take on the map."
+    - text: "You can see your route on the map now."
+    - text: "The route is now visible on your map."
+    - text: "I've mapped out your route. Please check the map."
+    - text: "Your route is displayed on the map. Let me know if you need directions."
+    - text: "I've just shown you the way on the map."
+    - text: "The map now shows your route."
 
 session_config:
   session_expiration_time: 60

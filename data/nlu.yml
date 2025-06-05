@@ -2,6 +2,25 @@ version: "3.1"
 
 nlu:
 
+- intent: int_deny
+  examples: |
+    - no
+    - nope
+    - nah
+    - not at all
+    - absolutely not
+    - never
+    - I don't think so
+    - I disagree
+    - no way
+    - not really
+    - I don't want to
+    - that's not correct
+    - I don't agree
+    - no thanks
+    - not interested
+    - I refuse
+
 - intent: goodbye
   examples: |
     - cu
@@ -39,8 +58,12 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: int_make_route
+  examples: |
+    - make route
+    - show route in map
 
-- intent: direccion_details_to_shelter
+- intent: int_direccion_details_to_shelter
   examples: |
     - Give me the instructions 
     - Get details instructions
@@ -199,7 +222,7 @@ nlu:
 
 #------------------------------ pregunta general LLama3----------------------
 
-- intent: general_question
+- intent: int_general_question
   examples: |
     - How can I create an evacuation plan?
     - I want to know how to build an emergency kit

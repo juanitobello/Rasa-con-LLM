@@ -2,18 +2,37 @@ version: "3.1"
 
 stories:
 
-- story: story_verificar_alertas_de_emergencia
+
+#---------------------- Chat GPT Stories V2-------------
+- story: story_verificar_alertas_de_emergencia_con_routes
   steps:
   - intent: int_saludo_verifiacion_de_alertas
   - action: action_check_alert_and_chatgpt
 
-
-- story: reportar_emergencia
+- story: story_make_route_on_map
   steps:
-  - intent: reportar_emergencia
-  - action: action_report_emergency
-  - intent: direccion_details_to_shelter
-  - action: 
+  - action: action_button_make_route
+  - intent: int_make_route
+  - action: action_make_route_instructions
+
+- story: story_verificar_alertas_de_emergencia_sin_routes
+  steps:
+  - intent: int_saludo_verifiacion_de_alertas
+  - action: action_check_alert_and_chatgpt
+  - action: action_button_make_route
+  - intent: int_deny
+  - action: utter_let_know_you_save
+
+
+
+
+
+# - story: reportar_emergencia
+#   steps:
+#   - intent: reportar_emergencia
+#   - action: action_report_emergency
+#   - intent: direccion_details_to_shelter
+#   #- action: 
 
 - story: story_user_are_in_emergency
   steps:
